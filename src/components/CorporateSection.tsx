@@ -41,7 +41,7 @@ const CorporateSection = () => {
                         className="relative aspect-square lg:aspect-auto lg:h-[80vh] rounded-3xl overflow-hidden"
                     >
                         <Image
-                            src="/assets/images/insta/insta6.jpg"
+                            src="/assets/images/products/corporate/temperature-flask.jpg"
                             alt="Corporate Gifting Service"
                             fill
                             className="object-cover"

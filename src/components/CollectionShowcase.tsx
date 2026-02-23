@@ -7,28 +7,28 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 
 const collections = [
     {
-        title: "The Royal Box",
-        price: "Starting ₹4,500",
-        img: "/assets/images/products/wedding/wed5.jpg",
+        title: "Executive Laptop Bag",
+        price: "Premium Quality",
+        img: "/assets/images/products/corporate/laptop-bag.jpg",
         tag: "Bestseller"
     },
     {
-        title: "Midnight Elegance",
-        price: "Starting ₹3,200",
-        img: "/assets/images/products/wedding/wed3.jpg",
-        tag: "Limited"
+        title: "LED Temperature Flask",
+        price: "Smart Gifting",
+        img: "/assets/images/products/corporate/temperature-flask.jpg",
+        tag: "Corporate"
     },
     {
-        title: "Ivory Dreams",
-        price: "Starting ₹5,800",
-        img: "/assets/images/insta/insta1.jpg",
-        tag: "Premium"
+        title: "Signature Pen & Keychain",
+        price: "Elegant Set",
+        img: "/assets/images/products/corporate/pen-keychain-set.jpg",
+        tag: "Personalized"
     },
     {
-        title: "Golden Heritage",
-        price: "Starting ₹7,500",
-        img: "/assets/images/insta/insta3.jpg",
-        tag: "New"
+        title: "Deluxe Notebook Set",
+        price: "Model H974",
+        img: "/assets/images/products/corporate/notebook-pen-set.jpg",
+        tag: "New Arrival"
     },
 ];
 
