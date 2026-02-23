@@ -21,13 +21,13 @@ const InstagramSection = () => {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-center mb-20">
                     <div>
-                        <span className="text-[10px] uppercase tracking-[0.4em] text-brand-copper font-bold mb-4 block">Follow Us</span>
-                        <h2 className="text-4xl md:text-6xl font-serif text-brand-brown mb-0">@aaraagifts <span className="italic text-brand-copper">Studio</span></h2>
+                        <span className="text-[10px] uppercase tracking-[0.4em] text-brand-gold font-bold mb-4 block">Follow Us</span>
+                        <h2 className="text-4xl md:text-6xl font-serif text-brand-maroon mb-0">@aaraagifts <span className="italic text-brand-gold">Studio</span></h2>
                     </div>
                     <Link
                         href="https://www.instagram.com/aaraagifts"
                         target="_blank"
-                        className="mt-8 md:mt-0 flex items-center gap-4 px-10 py-4 border border-brand-brown/10 text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-brand-brown hover:text-white transition-all duration-500 rounded-sm"
+                        className="mt-8 md:mt-0 flex items-center gap-4 px-10 py-4 bg-brand-maroon text-white text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-brand-gold transition-all duration-500 rounded-full shadow-lg hover:shadow-gold"
                     >
                         <Instagram size={16} />
                         View on Instagram

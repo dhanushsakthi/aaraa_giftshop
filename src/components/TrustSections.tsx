@@ -23,12 +23,12 @@ const TrustSections = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: i * 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-brand-ivory p-16 rounded-3xl text-center group border border-transparent hover:border-brand-copper/10 transition-all duration-500"
+                            className="bg-brand-ivory p-16 rounded-[3rem] text-center group border border-transparent hover:border-brand-gold/10 transition-all duration-500 shadow-premium hover:shadow-2xl"
                         >
-                            <div className="w-20 h-20 bg-white shadow-xl rounded-2xl flex items-center justify-center text-brand-copper mb-10 mx-auto group-hover:scale-110 group-hover:bg-brand-copper group-hover:text-white transition-all duration-700">
+                            <div className="w-20 h-20 bg-white shadow-xl rounded-[1.5rem] flex items-center justify-center text-brand-maroon mb-10 mx-auto group-hover:scale-110 group-hover:bg-brand-maroon group-hover:text-white transition-all duration-700">
                                 {point.icon}
                             </div>
-                            <h3 className="text-2xl font-serif mb-6 text-brand-brown uppercase tracking-wider">{point.title}</h3>
+                            <h3 className="text-2xl font-serif mb-6 text-brand-maroon uppercase tracking-wider">{point.title}</h3>
                             <p className="text-brand-espresso/40 leading-relaxed text-base font-light max-w-xs mx-auto">{point.desc}</p>
                         </motion.div>
                     ))}
@@ -36,15 +36,15 @@ const TrustSections = () => {
 
                 {/* Impact Statement */}
                 <div className="max-w-5xl mx-auto text-center">
-                    <div className="flex justify-center gap-2 text-brand-copper mb-12">
-                        {[1, 2, 3, 4, 5].map(s => <Star key={s} fill="#C67139" className="w-5 h-5" />)}
+                    <div className="flex justify-center gap-2 text-brand-gold mb-12">
+                        {[1, 2, 3, 4, 5].map(s => <Star key={s} fill="#D4AF37" className="w-5 h-5" />)}
                     </div>
-                    <blockquote className="text-4xl md:text-7xl font-serif text-brand-brown leading-tight mb-16 italic font-bold">
-                        "They don't just deliver gifts; they deliver a feeling of absolute <span className="text-brand-copper underline decoration-1 underline-offset-8">exclusivity</span> and care."
+                    <blockquote className="text-4xl md:text-7xl font-serif text-brand-maroon leading-tight mb-16 italic font-bold">
+                        "They don't just deliver gifts; they deliver a feeling of absolute <span className="text-brand-gold underline decoration-1 underline-offset-8">exclusivity</span> and care."
                     </blockquote>
                     <div className="flex flex-col items-center">
-                        <div className="w-16 h-[1px] bg-brand-copper mb-8" />
-                        <p className="text-xs uppercase tracking-[0.6em] text-brand-brown font-bold">Ananya Sharma, Founder Signature Events</p>
+                        <div className="w-16 h-[1px] bg-brand-gold/30 mb-8" />
+                        <p className="text-xs uppercase tracking-[0.6em] text-brand-espresso font-bold">Ananya Sharma, Founder Signature Events</p>
                     </div>
                 </div>
             </div>

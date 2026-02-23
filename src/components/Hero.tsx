@@ -66,7 +66,7 @@ const Hero = () => {
 
             {/* Content Layer */}
             <div className="container mx-auto px-6 h-full relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 h-full items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 h-full items-center gap-12">
                     <div className="lg:col-span-7 pt-20">
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -76,16 +76,18 @@ const Hero = () => {
                                 exit={{ opacity: 0, y: -30 }}
                                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                             >
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-12 h-[1px] bg-brand-gold" />
-                                    <span className="text-[10px] uppercase tracking-[0.6em] text-brand-gold font-bold">
-                                        {slides[current].subtitle}
-                                    </span>
-                                </div>
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-gold/10 text-brand-gold text-[9px] font-bold tracking-[0.2em] uppercase border border-brand-gold/20 mb-8"
+                                >
+                                    <Star size={12} fill="currentColor" />
+                                    <span>{slides[current].subtitle}</span>
+                                </motion.div>
 
-                                <h1 className={`text-6xl md:text-[120px] font-serif leading-[0.85] mb-10 tracking-tighter ${slides[current].accent}`}>
+                                <h1 className={`text-6xl md:text-[110px] font-serif leading-[0.85] mb-10 tracking-tighter ${slides[current].accent}`}>
                                     {slides[current].title.split(' ').slice(0, 2).join(' ')} <br />
-                                    <span className="italic font-light opacity-50 text-stroke">
+                                    <span className="italic font-light opacity-60 text-stroke">
                                         {slides[current].title.split(' ').slice(2).join(' ')}
                                     </span>
                                 </h1>
@@ -95,21 +97,18 @@ const Hero = () => {
                                 </p>
 
                                 <div className="flex flex-wrap gap-8 items-center">
-                                    <button className="relative group px-16 py-6 bg-brand-maroon text-white text-[10px] tracking-[0.4em] uppercase font-bold overflow-hidden transition-all duration-500">
-                                        <span className="relative z-10 flex items-center gap-4">
-                                            The Studio Selection
-                                            <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-500" />
-                                        </span>
-                                        <div className="absolute inset-0 bg-brand-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                                    <button className="px-12 py-5 bg-brand-maroon text-white text-[10px] tracking-[0.4em] uppercase font-bold rounded-full shadow-2xl shadow-brand-maroon/20 hover:scale-105 transition-all duration-500 flex items-center gap-4 group">
+                                        Explorate Selection
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-500" />
                                     </button>
 
                                     <div className="flex gap-4 items-center">
-                                        <button onClick={prevSlide} className="w-14 h-14 rounded-full border border-brand-maroon/10 flex items-center justify-center text-brand-maroon hover:bg-brand-maroon hover:text-white transition-all duration-500">
-                                            <ChevronLeft size={24} />
+                                        <button onClick={prevSlide} className="w-12 h-12 rounded-full border border-brand-maroon/10 flex items-center justify-center text-brand-maroon hover:bg-brand-maroon hover:text-white transition-all">
+                                            <ChevronLeft size={20} />
                                         </button>
-                                        <span className="text-[10px] font-bold text-brand-gold tracking-widest">0{current + 1} / 0{slides.length}</span>
-                                        <button onClick={nextSlide} className="w-14 h-14 rounded-full border border-brand-maroon/10 flex items-center justify-center text-brand-maroon hover:bg-brand-maroon hover:text-white transition-all duration-500">
-                                            <ChevronRight size={24} />
+                                        <span className="text-[10px] font-bold text-brand-gold tracking-widest">0{current + 1}</span>
+                                        <button onClick={nextSlide} className="w-12 h-12 rounded-full border border-brand-maroon/10 flex items-center justify-center text-brand-maroon hover:bg-brand-maroon hover:text-white transition-all">
+                                            <ChevronRight size={20} />
                                         </button>
                                     </div>
                                 </div>
@@ -117,26 +116,44 @@ const Hero = () => {
                         </AnimatePresence>
                     </div>
 
-                    {/* Decorative Elements */}
-                    <div className="hidden lg:block lg:col-span-5 relative h-full">
-                        <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-brand-gold/10 rounded-full"
-                        >
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-brand-gold rounded-full" />
-                        </motion.div>
-
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                    {/* Right Side: Showcase Image with Badge */}
+                    <div className="hidden lg:flex lg:col-span-5 relative justify-center items-center h-full">
+                        <AnimatePresence mode="wait">
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                className="flex flex-col items-center gap-6"
+                                key={current}
+                                initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+                                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                                exit={{ opacity: 0, scale: 1.1, rotate: -5 }}
+                                transition={{ duration: 1.2, ease: "circOut" }}
+                                className="relative w-full aspect-[4/5] max-w-sm rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-2 transition-transform duration-1000 group"
                             >
-                                <Star className="text-brand-gold w-8 h-8 animate-pulse" />
-                                <span className="text-[9px] uppercase tracking-[1em] text-brand-gold font-bold vertical-text">Premium Choice</span>
+                                <Image
+                                    src={slides[current].img}
+                                    alt="Featured Selection"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
+                                    unoptimized
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand-maroon/40 to-transparent" />
+
+                                {/* Floating Badge */}
+                                <motion.div
+                                    animate={{ y: [0, -15, 0] }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                    className="absolute -top-6 -right-6 p-6 bg-white/95 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-brand-gold/10 z-20"
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center text-white shadow-lg">
+                                            <Star size={24} fill="white" />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="text-[10px] font-bold text-brand-espresso uppercase tracking-wider">Elite Gifting</span>
+                                            <span className="text-[8px] text-brand-maroon font-bold uppercase tracking-[0.2em]">Verified Luxury</span>
+                                        </div>
+                                    </div>
+                                </motion.div>
                             </motion.div>
-                        </div>
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>

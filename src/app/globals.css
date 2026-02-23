@@ -144,3 +144,20 @@ h4,
   background: linear-gradient(to bottom, transparent, #D4AF37, transparent);
   margin: 0 auto;
 }
+
+.shadow-premium {
+  box-shadow: 0 25px 50px -12px rgba(131, 50, 30, 0.12);
+}
+
+.shadow-gold {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}

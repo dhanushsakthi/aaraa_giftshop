@@ -45,11 +45,11 @@ const specs = [
 
 const TechnicalDetails = () => {
     return (
-        <section className="py-40 bg-brand-brown text-white overflow-hidden">
+        <section className="py-40 bg-brand-maroon text-white overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="max-w-4xl mb-32">
-                    <span className="text-[10px] uppercase tracking-[0.6em] text-brand-copper font-bold mb-6 block">Technical Excellence</span>
-                    <h2 className="text-5xl md:text-8xl font-serif mb-12 leading-[0.95] tracking-tight">The Science <br /> <span className="italic text-brand-copper">of Perfection.</span></h2>
+                    <span className="text-[10px] uppercase tracking-[0.6em] text-brand-gold font-bold mb-6 block">Technical Excellence</span>
+                    <h2 className="text-5xl md:text-8xl font-serif mb-12 leading-[0.95] tracking-tight">The Science <br /> <span className="italic text-brand-gold">of Perfection.</span></h2>
                     <p className="text-white/40 text-xl font-light leading-relaxed max-w-2xl">
                         At Aara, we bridge the gap between artisanal beauty and technical engineering. Every gift is a result of balanced weightages and precise material science.
                     </p>
@@ -66,15 +66,15 @@ const TechnicalDetails = () => {
                             className="group"
                         >
                             <div className="flex items-start gap-6">
-                                <div className="w-12 h-12 rounded-full border border-brand-copper/30 flex items-center justify-center text-brand-copper group-hover:bg-brand-copper group-hover:text-brand-brown transition-all duration-500 flex-shrink-0">
+                                <div className="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-maroon transition-all duration-500 flex-shrink-0">
                                     {spec.icon}
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-serif mb-3 tracking-wide">{spec.title}</h4>
+                                    <h4 className="text-xl font-serif mb-3 tracking-wide group-hover:text-brand-gold transition-colors">{spec.title}</h4>
                                     <p className="text-white/40 text-sm font-light leading-relaxed mb-4">
                                         {spec.desc}
                                     </p>
-                                    <span className="text-[9px] uppercase tracking-[0.3em] text-brand-copper font-bold px-3 py-1 border border-brand-copper/20 rounded-full">
+                                    <span className="text-[9px] uppercase tracking-[0.3em] text-brand-gold font-bold px-3 py-1 border border-brand-gold/20 rounded-full">
                                         {spec.tech}
                                     </span>
                                 </div>

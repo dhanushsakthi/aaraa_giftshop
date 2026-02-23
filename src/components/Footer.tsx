@@ -34,45 +34,45 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Discovery */}
                     <div className="lg:ml-auto">
-                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-copper mb-5 font-bold">Discovery</h4>
-                        <ul className="space-y-3 text-xs tracking-[0.1em] text-white/50 uppercase font-medium">
-                            <li><Link href="/collections" className="hover:text-white transition-colors">Wedding Collections</Link></li>
-                            <li><Link href="/corporate" className="hover:text-white transition-colors">Corporate Gifting</Link></li>
-                            <li><Link href="/about" className="hover:text-white transition-colors">Our Story</Link></li>
-                            <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-gold mb-6 font-bold">Discovery</h4>
+                        <ul className="space-y-3 text-[10px] tracking-[0.15em] text-white/40 uppercase font-bold">
+                            <li><Link href="/collections/wedding" className="hover:text-brand-gold transition-colors">Wedding Collections</Link></li>
+                            <li><Link href="/collections/womens-day" className="hover:text-brand-gold transition-colors">Women's Day Gifts</Link></li>
+                            <li><Link href="/corporate" className="hover:text-brand-gold transition-colors">Corporate Gifting</Link></li>
+                            <li><Link href="/collections/custom" className="hover:text-brand-gold transition-colors">Custom Hampers</Link></li>
                         </ul>
                     </div>
 
-                    {/* Reach Us */}
+                    {/* Support */}
                     <div className="lg:ml-auto">
-                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-copper mb-5 font-bold">Support</h4>
-                        <ul className="space-y-3 text-xs tracking-[0.1em] text-white/50 uppercase font-medium">
-                            <li><Link href="#" className="hover:text-white transition-colors">Shipping Guide</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Returns Policy</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Track Order</Link></li>
+                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-gold mb-6 font-bold">Support</h4>
+                        <ul className="space-y-3 text-[10px] tracking-[0.15em] text-white/40 uppercase font-bold">
+                            <li><Link href="/about" className="hover:text-brand-gold transition-colors">Our Story</Link></li>
+                            <li><Link href="/contact" className="hover:text-brand-gold transition-colors">Contact Us</Link></li>
+                            <li><Link href="#" className="hover:text-brand-gold transition-colors">Shipping Guide</Link></li>
                         </ul>
                     </div>
 
                     {/* Studio Details */}
                     <div className="lg:ml-auto">
-                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-copper mb-5 font-bold">The Studio</h4>
-                        <ul className="space-y-4 text-xs text-white/50 font-light">
-                            <li className="flex gap-3"><MapPin className="w-4 h-4 text-brand-copper flex-shrink-0" /> South Extension, Block C, New Delhi</li>
-                            <li className="flex gap-3"><Phone className="w-4 h-4 text-brand-copper flex-shrink-0" /> +91 97112 00000</li>
-                            <li className="flex gap-3"><Mail className="w-4 h-4 text-brand-copper flex-shrink-0" /> hello@aaragifts.com</li>
+                        <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-gold mb-6 font-bold">The Studio</h4>
+                        <ul className="space-y-4 text-[11px] text-white/50 font-medium">
+                            <li className="flex gap-4"><MapPin className="w-5 h-5 text-brand-gold flex-shrink-0" /> South Extension, Block C, New Delhi</li>
+                            <li className="flex gap-4"><Phone className="w-5 h-5 text-brand-gold flex-shrink-0" /> +91 9443232172</li>
+                            <li className="flex gap-4"><Mail className="w-5 h-5 text-brand-gold flex-shrink-0" /> aaraagiftshop@gmail.com</li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-white/20 text-[10px] uppercase tracking-[0.5em] font-bold">
-                        © Aara Gifts {new Date().getFullYear()}. Crafted for impressions.
+                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-white/20 text-[9px] uppercase tracking-[0.5em] font-bold">
+                        © AARA Gifting {new Date().getFullYear()}. Moments of Perfection.
                     </p>
-                    <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-white/20 font-bold">
-                        <span className="hover:text-brand-copper cursor-pointer transition-colors">Privacy</span>
-                        <span className="hover:text-brand-copper cursor-pointer transition-colors">Terms</span>
+                    <div className="flex gap-10 text-[9px] uppercase tracking-[0.2em] text-white/20 font-bold">
+                        <span className="hover:text-brand-gold cursor-pointer transition-colors">Privacy Policy</span>
+                        <span className="hover:text-brand-gold cursor-pointer transition-colors">Terms of Service</span>
                     </div>
                 </div>
             </div>

@@ -52,15 +52,17 @@ const QuickCategories = () => {
                             className="flex flex-col items-center group cursor-pointer"
                         >
                             <Link href={cat.href} className="flex flex-col items-center">
-                                <div className="relative w-24 h-24 lg:w-32 lg:h-32 rounded-full overflow-hidden mb-4 border-2 border-transparent group-hover:border-brand-copper transition-all duration-500">
-                                    <img
+                                <div className="relative w-24 h-24 lg:w-32 lg:h-32 rounded-full overflow-hidden mb-4 border-2 border-transparent group-hover:border-brand-gold transition-all duration-500 shadow-premium group-hover:shadow-gold">
+                                    <Image
                                         src={cat.img}
                                         alt={cat.name}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        unoptimized
                                     />
-                                    <div className="absolute inset-0 bg-brand-brown/5 group-hover:bg-transparent transition-colors duration-500" />
+                                    <div className="absolute inset-0 bg-brand-maroon/5 group-hover:bg-transparent transition-colors duration-500" />
                                 </div>
-                                <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.2em] font-bold text-center text-brand-espresso/80 group-hover:text-brand-copper transition-colors whitespace-nowrap">
+                                <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.2em] font-bold text-center text-brand-espresso/80 group-hover:text-brand-gold transition-colors whitespace-nowrap">
                                     {cat.name}
                                 </span>
                             </Link>

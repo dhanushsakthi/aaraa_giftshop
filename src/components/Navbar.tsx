@@ -11,6 +11,7 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [logoError, setLogoError] = useState(false);
     const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
+    const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,39 +47,78 @@ const Navbar = () => {
     ];
 
     return (
-        <header className="sticky top-0 left-0 right-0 z-[100] w-full bg-brand-maroon border-b border-white/5">
-            {/* Announcement Bar - Slimmer */}
-            <div className="bg-brand-brown/90 text-white py-1 overflow-hidden h-7 flex items-center border-b border-white/5">
-                <div className="flex whitespace-nowrap animate-marquee">
-                    {[1, 2, 3, 4].map((i) => (
-                        <span key={i} className="mx-8 text-[8px] font-bold uppercase tracking-[0.4em] flex items-center">
-                            Curating Extraordinary Moments <span className="w-1 h-1 bg-brand-rosegold/50 rounded-full ml-12" />
-                            Global Luxury Shipping Available <span className="w-1 h-1 bg-brand-rosegold/50 rounded-full ml-12" />
+        <header className="fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300">
+            {/* Top Bar - Reference Inspired Contact Info */}
+            <div className={`bg-brand-maroon text-white py-1.5 px-6 text-[9px] uppercase tracking-[0.2em] font-bold transition-all duration-300 ${isScrolled ? 'h-0 py-0 overflow-hidden opacity-0' : 'h-auto opacity-100'}`}>
+                <div className="container mx-auto flex justify-between items-center">
+                    <div className="flex items-center gap-6">
+                        <span className="flex items-center gap-2">
+                            <span className="text-brand-gold">TEL:</span> +91 9443232172
                         </span>
-                    ))}
+                        <span className="hidden sm:flex items-center gap-2">
+                            <span className="text-brand-gold">EMAIL:</span> aaraagiftshop@gmail.com
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="italic font-light text-white/80">Premium Indian Artisanry</span>
+                    </div>
                 </div>
             </div>
 
-            {/* Main Navbar - Ultra Compact */}
-            <div className={`transition-all duration-300 ${isScrolled ? 'py-0.5' : 'py-1'}`}>
-                <div className="container mx-auto px-6 grid grid-cols-3 items-center min-h-[50px]">
+            {/* Main Navbar */}
+            <div className={`w-full transition-all duration-300 ${isScrolled ? 'bg-brand-maroon/95 backdrop-blur-md py-1 shadow-2xl' : 'bg-brand-maroon py-3 border-b border-white/10'}`}>
+                <div className="container mx-auto px-6 flex items-center justify-between gap-8 h-12">
 
-                    {/* Left: Search Bar */}
-                    <div className="flex items-center">
-                        <div className="relative group/search">
-                            <input
-                                type="text"
-                                placeholder="Search studio..."
-                                className="bg-transparent border-b border-white/20 py-0.5 pl-6 pr-4 text-[8.5px] w-28 focus:outline-none focus:w-40 focus:border-brand-gold transition-all duration-500 text-white"
-                            />
-                            <Search className="absolute left-0 top-1/2 -translate-y-1/2 text-white/50" size={10} />
-                        </div>
+                    {/* Left: Mobile Menu Toggle & Search (Icon on mobile) */}
+                    <div className="flex lg:hidden items-center gap-4 text-white">
+                        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                            <Menu size={20} />
+                        </button>
+                        <Search size={18} />
                     </div>
 
-                    {/* Center: Logo - Scaled UP by 50% */}
-                    <div className="flex justify-center py-1">
-                        <Link href="/" className="relative group/logo">
-                            <div className={`relative transition-all duration-500 ${isScrolled ? 'h-24 w-48' : 'h-[120px] w-[240px] lg:h-[150px] lg:w-[300px]'}`}>
+                    {/* Left/Center: Search Bar (Desktop) - Enhanced Search UI */}
+                    <div className="hidden lg:flex flex-1 max-w-xs relative group/search">
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Explore collections..."
+                            className="bg-white/5 border border-white/10 rounded-full py-1.5 pl-10 pr-4 text-[10px] w-full focus:outline-none focus:bg-white/10 focus:border-brand-gold transition-all duration-300 text-white placeholder:text-white/30"
+                        />
+                        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/50" size={14} />
+
+                        {/* Search Suggestions */}
+                        <AnimatePresence>
+                            {searchQuery.length >= 2 && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 10 }}
+                                    className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-brand-gold/10 overflow-hidden z-[110]"
+                                >
+                                    <div className="p-2">
+                                        {["Wedding Gifts", "Personalized Hampers", "Corporate Sets", "Women's Day Special"]
+                                            .filter(item => item.toLowerCase().includes(searchQuery.toLowerCase()))
+                                            .map((item, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="px-4 py-2 text-[9px] uppercase tracking-widest text-brand-espresso/60 hover:bg-brand-rosegold/30 hover:text-brand-maroon cursor-pointer transition-colors font-bold flex items-center gap-3"
+                                                >
+                                                    <div className="w-1 h-1 rounded-full bg-brand-gold" />
+                                                    {item}
+                                                </div>
+                                            ))}
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+
+                    {/* Center: Logo - Adjusted for Fixed Header */}
+                    <div className="flex-shrink-0">
+                        <Link href="/" className="relative group/logo block">
+                            <div className={`relative transition-all duration-500 ${isScrolled ? 'h-10 w-28 lg:h-12 lg:w-32' : 'h-16 w-36 lg:h-20 lg:w-48'}`}>
                                 <Image
                                     src="/aaraa-logo-transparent.png"
                                     alt="Aara Gifting"
@@ -89,8 +129,8 @@ const Navbar = () => {
                                     onError={() => setLogoError(true)}
                                 />
                                 {logoError && (
-                                    <div className="absolute inset-0 flex flex-col items-center justify-center text-brand-brown text-center">
-                                        <span className="text-2xl font-serif font-bold tracking-widest leading-none text-white">AARA</span>
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                                        <span className="text-lg lg:text-xl font-serif font-bold tracking-widest leading-none text-white">AARA</span>
                                         <span className="text-[6px] uppercase tracking-[0.4em] font-bold text-brand-gold">Luxury Studio</span>
                                     </div>
                                 )}
@@ -98,24 +138,28 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    {/* Right: Icons */}
-                    <div className="flex items-center justify-end space-x-3 text-white">
-                        <div className="hidden lg:flex items-center space-x-4">
-                            <Heart className="hover:text-brand-brown cursor-pointer transition-colors" size={14} />
-                            <User className="hover:text-brand-brown cursor-pointer transition-colors" size={14} />
+                    {/* Right: Actions */}
+                    <div className="flex items-center justify-end space-x-5 text-white">
+                        <div className="hidden lg:flex items-center space-x-6">
+                            <Link href="/wishlist" className="hover:text-brand-gold transition-colors relative">
+                                <Heart size={18} strokeWidth={1.5} />
+                            </Link>
+                            <Link href="/account" className="hover:text-brand-gold transition-colors">
+                                <User size={18} strokeWidth={1.5} />
+                            </Link>
                             <div className="relative cursor-pointer group/bag">
-                                <ShoppingBag className="group-hover/bag:text-brand-brown transition-colors" size={14} />
-                                <span className="absolute -top-1 -right-1 bg-brand-brown text-white text-[6px] font-bold w-3 h-3 rounded-full flex items-center justify-center">0</span>
+                                <ShoppingBag className="group-hover/bag:text-brand-gold transition-colors" size={18} strokeWidth={1.5} />
+                                <span className="absolute -top-1.5 -right-1.5 bg-brand-gold text-brand-maroon text-[7px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center border border-brand-maroon">0</span>
                             </div>
                         </div>
-                        {/* Mobile Toggle */}
-                        <button className="lg:hidden p-1 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                            {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-                        </button>
+                        {/* Tablet Search/Bag for mobile/tablet */}
+                        <div className="lg:hidden flex items-center gap-4">
+                            <ShoppingBag size={20} />
+                        </div>
                     </div>
                 </div>
 
-                {/* Desktop Navigation Links - Tighter Spacing */}
+                {/* Desktop Navigation Links - Tighter Spacing - Now inside the wrapper */}
                 <nav className={`hidden lg:flex justify-center space-x-6 mt-1 relative z-50 transition-all duration-500 ${isScrolled ? 'mt-0 pb-1' : 'mt-0 pb-2'}`}>
                     {navLinks.map((link, i) => (
                         <div
@@ -207,7 +251,7 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </header>
+        </header >
     );
 };
 

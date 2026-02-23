@@ -45,7 +45,7 @@ const CategoryShowcase = () => {
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-4 mb-6">
                             <StarIcon />
-                            <span className="text-[10px] uppercase tracking-[0.5em] text-brand-gold font-bold">The Curated Series</span>
+                            <span className="text-[11px] uppercase tracking-[0.5em] text-brand-gold font-bold">The Curated Series</span>
                         </div>
                         <h2 className="text-5xl md:text-8xl font-serif text-brand-maroon leading-none tracking-tighter">
                             Explore <br />
@@ -62,7 +62,7 @@ const CategoryShowcase = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true }}
-                            className={`${cat.span} group relative overflow-hidden bg-brand-espresso`}
+                            className={`${cat.span} group relative overflow-hidden bg-brand-espresso rounded-[3rem] shadow-premium hover:shadow-2xl transition-all duration-700`}
                         >
                             <Link href={cat.href} className="block w-full h-full relative">
                                 <Image
