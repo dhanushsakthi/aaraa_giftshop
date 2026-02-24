@@ -24,7 +24,7 @@ const slides = [
         title: "Modern Corporate Studio",
         subtitle: "Institutional Excellence • Volume Tier",
         desc: "Precision-branded executive suites that integrate your identity through premium etching and color-matched silk linings. High-volume execution with boutique consistency.",
-        img: "/assets/images/products/womens/w2.jpg",
+        img: "/assets/images/corporate/combo4.jpeg",
         accent: "text-brand-espresso"
     }
 ];
