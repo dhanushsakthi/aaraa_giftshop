@@ -13,7 +13,7 @@ const quickCategories = [
     },
     {
         name: "Corporate Gifts",
-        img: "/assets/images/products/corporate/notebook-pen-set.jpg",
+        img: "/assets/images/corporate/combo1.jpeg",
         href: "/corporate"
     },
     {

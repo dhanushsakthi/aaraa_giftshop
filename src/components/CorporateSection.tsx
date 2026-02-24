@@ -41,7 +41,7 @@ const CorporateSection = () => {
                         className="relative aspect-square lg:aspect-auto lg:h-[80vh] rounded-[3rem] overflow-hidden shadow-premium group"
                     >
                         <Image
-                            src="/assets/images/products/corporate/temperature-flask.jpg"
+                            src="/assets/images/corporate/combo4.jpeg"
                             alt="Corporate Gifting Service"
                             fill
                             className="object-cover transition-transform duration-[2s] group-hover:scale-105"

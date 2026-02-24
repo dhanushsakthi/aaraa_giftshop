@@ -9,25 +9,25 @@ const collections = [
     {
         title: "Executive Laptop Bag",
         price: "Premium Quality",
-        img: "/assets/images/products/corporate/laptop-bag.jpg",
+        img: "/assets/images/corporate/bag1.jpeg",
         tag: "Bestseller"
     },
     {
         title: "LED Temperature Flask",
         price: "Smart Gifting",
-        img: "/assets/images/products/corporate/temperature-flask.jpg",
+        img: "/assets/images/corporate/flask1.jpeg",
         tag: "Corporate"
     },
     {
-        title: "Signature Pen & Keychain",
+        title: "Signature Pen Set",
         price: "Elegant Set",
-        img: "/assets/images/products/corporate/pen-keychain-set.jpg",
+        img: "/assets/images/corporate/pen2.jpeg",
         tag: "Personalized"
     },
     {
         title: "Deluxe Notebook Set",
-        price: "Model H974",
-        img: "/assets/images/products/corporate/notebook-pen-set.jpg",
+        price: "Premium Combo",
+        img: "/assets/images/corporate/handbook&pen1.jpeg",
         tag: "New Arrival"
     },
 ];
